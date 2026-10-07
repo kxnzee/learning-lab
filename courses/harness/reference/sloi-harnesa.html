@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Шпаргалка · Слои харнеса</title>
+  <title>Шпаргалка слоёв харнеса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="../../../assets/lab.css">
 </head>
 <body>
@@ -13,16 +15,16 @@
   <p><strong>Агент = модель + харнес.</strong> Модель только просит; харнес исполняет, ограничивает и решает, что модель увидит дальше. <a href="../lessons/0001-sloi-harnesa.html">Урок 0001</a></p>
 
   <h2>Два этажа</h2>
-  <table>
+  <div class="table-wrap"><table>
     <thead><tr><th>Этаж</th><th>Что входит</th><th>Кто пишет</th><th>Что вы с ним делаете</th></tr></thead>
     <tbody>
       <tr><td>Рантайм агента</td><td>цикл, исполнение инструментов, права, окно контекста и компакция, механика субагентов</td><td>вендор: Claude Code, Codex, Qwen Code, GigaCode</td><td>выбираете и настраиваете</td></tr>
       <tr><td>Обвязка</td><td>инструкции, скиллы, команды, хуки, MCP-серверы, роли субагентов, файлы памяти</td><td>вы</td><td>пишете — только через точки расширения рантайма</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h2>Слои</h2>
-  <table>
+  <div class="table-wrap"><table>
     <thead><tr><th>Слой</th><th>Проблема</th><th>Этаж</th></tr></thead>
     <tbody>
       <tr><td>Цикл</td><td>модель не действует сама</td><td>рантайм</td></tr>
@@ -35,7 +37,7 @@
       <tr><td>Субагенты</td><td>изоляция контекста, параллельность</td><td>механика — рантайм, роли — обвязка</td></tr>
       <tr><td>Память</td><td>что переживает сессию</td><td>обвязка (файлы)</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h2>Два правила</h2>
   <ol>

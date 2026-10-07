@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>0001 · Слои харнеса: где кончается агент и начинается обвязка</title>
+  <title>Слои харнеса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="../../../assets/lab.css">
   <script src="../../../assets/quiz.js" defer></script>
 </head>
@@ -43,7 +45,7 @@
       <li><strong>Обвязка</strong> — то, что вы кладёте поверх: инструкции, скиллы, команды, хуки, MCP-серверы, определения субагентов. Её пишете вы. Superpowers, ECC и ваш Orchestrator живут на этом этаже.</li>
     </ul>
 
-    <table>
+    <div class="table-wrap"><table>
       <thead><tr><th>Слой</th><th>Какую проблему решает</th><th>Этаж</th><th>Пример в Claude Code</th></tr></thead>
       <tbody>
         <tr><td>Цикл</td><td>Модель не действует сама — кто-то должен вызывать её снова с результатами</td><td>рантайм</td><td>встроен</td></tr>
@@ -56,7 +58,7 @@
         <tr><td>Субагенты</td><td>Изоляция контекста, параллельная работа</td><td>механика — рантайм, роли — обвязка</td><td>определения субагентов</td></tr>
         <tr><td>Память</td><td>Что переживает сессию</td><td>обвязка (файлы) поверх рантайма</td><td><code>CLAUDE.md</code>, файлы состояния</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <section>

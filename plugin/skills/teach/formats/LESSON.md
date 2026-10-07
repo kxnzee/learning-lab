@@ -22,9 +22,12 @@
 Подключение из `courses/<slug>/lessons/`:
 
 ```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
 <link rel="stylesheet" href="../../../assets/lab.css">
 <script src="../../../assets/quiz.js" defer></script>
 ```
+
+Таблицы оборачивай в `<div class="table-wrap">` — на телефоне они прокручиваются, а не растягивают страницу. Цвета — только токены из `lab.css`, без собственных литералов: урок должен читаться и в светлой, и в тёмной теме.
 
 ### Квиз
 
@@ -59,7 +62,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NNNN · {название}</title>
+  <title>{название — 2–4 слова, без пояснений через двоеточие}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="../../../assets/lab.css">
   <script src="../../../assets/quiz.js" defer></script>
 </head>
