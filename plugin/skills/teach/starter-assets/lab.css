@@ -1,0 +1,89 @@
+/* learning-lab — общий стиль уроков и справочников. Компонент: подключается всеми уроками. */
+:root {
+  --paper: #fbfaf7;
+  --ink: #1d1c1a;
+  --muted: #6b6862;
+  --rule: #e4e1da;
+  --accent: #b5532b;
+  --accent-soft: #f6e9e2;
+  --ok: #2f6b3a;
+  --ok-soft: #e5f1e6;
+  --bad: #9a2c25;
+  --bad-soft: #f7e3e1;
+  --code-bg: #f1efe9;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171614; --ink: #ebe8e1; --muted: #a29e95; --rule: #34322e;
+    --accent: #e58d63; --accent-soft: #3a2a22; --ok: #8fcf98; --ok-soft: #1f3022;
+    --bad: #f0958c; --bad-soft: #3d2220; --code-bg: #24221f;
+  }
+}
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+h1, h2, h3 { font-weight: 500; line-height: 1.25; }
+h1 { font-size: 2rem; margin: .2rem 0 .8rem; }
+h2 { font-size: 1.3rem; margin: 2.6rem 0 .8rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
+p, ul, ol { margin: 0 0 1rem; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.kicker { font-family: var(--sans); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.win { font-family: var(--sans); font-size: .95rem; background: var(--accent-soft); border-left: 3px solid var(--accent); padding: .7rem 1rem; margin: 1rem 0 0; }
+
+code, pre, kbd { font-family: var(--mono); font-size: .85em; }
+code { background: var(--code-bg); padding: .1em .35em; border-radius: 3px; }
+pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; line-height: 1.45; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .88rem; margin: 0 0 1.2rem; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); }
+
+/* Сноски-цитаты: <sup class="cite"><a href="…">1</a></sup> */
+.cite { font-family: var(--sans); font-size: .7em; }
+.note, .source { font-family: var(--sans); font-size: .9rem; color: var(--muted); border-left: 2px solid var(--rule); padding: .2rem 0 .2rem 1rem; margin: 1.5rem 0; }
+.source strong, .source a { color: var(--ink); }
+
+/* Задание в lab/ */
+.task { font-family: var(--sans); font-size: .95rem; border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+.task h3 { margin-top: 0; }
+.task .done { color: var(--muted); font-size: .85rem; margin: .5rem 0 0; }
+
+/* Квиз и вспоминание — разметку оживляет quiz.js */
+.quiz, .recall { font-family: var(--sans); font-size: .95rem; border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+.quiz .q, .recall .q { font-weight: 600; margin-bottom: .8rem; }
+.quiz button { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: .6rem .8rem; margin: .4rem 0; cursor: pointer; }
+.quiz button:hover:not([disabled]) { border-color: var(--accent); }
+.quiz button.is-correct { background: var(--ok-soft); border-color: var(--ok); }
+.quiz button.is-wrong { background: var(--bad-soft); border-color: var(--bad); }
+.quiz button[disabled] { cursor: default; }
+.quiz .why, .recall .answer { display: none; margin: .8rem 0 0; color: var(--muted); }
+.quiz.is-answered .why, .recall.is-revealed .answer { display: block; }
+.quiz .verdict { font-weight: 600; margin: .6rem 0 0; }
+.recall textarea { width: 100%; min-height: 4.5rem; font: inherit; color: inherit; background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: .6rem .8rem; }
+.recall .controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+.recall .controls button { font: inherit; font-size: .85rem; color: inherit; background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: .35rem .7rem; cursor: pointer; }
+.recall .controls button:hover { border-color: var(--accent); }
+.recall .error { color: var(--bad); font-size: .85rem; margin: .4rem 0 0; }
+
+footer { font-family: var(--sans); font-size: .85rem; color: var(--muted); margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+
+/* Справочник — плотнее, для быстрого поиска и печати */
+.reference { max-width: 52rem; }
+.reference h2 { margin-top: 1.8rem; }
+
+@media print {
+  html { font-size: 11pt; }
+  body { background: #fff; color: #000; }
+  main { max-width: none; padding: 0; }
+  .quiz button { border-color: #999; }
+  .quiz .why, .recall .answer { display: block; }
+  .recall textarea, .recall .controls, footer { display: none; }
+  a { color: #000; }
+  h2 { break-after: avoid; }
+}
