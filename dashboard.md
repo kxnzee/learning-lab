@@ -6,7 +6,7 @@
 
 | Тема | Тип | Миссия (коротко) | Последний урок | Что дальше |
 |---|---|---|---|---|
-| [harness](courses/harness/MISSION.md) — выбрать харнес для себя, построить для аналитиков | research → practice | Модель слоёв харнеса → выбор своего → харнес аналитиков кластера | [0001 · Слои харнеса](https://claude.ai/artifact/XFJohnNxpVsaSL2ejVj3WY) — 2026-10-07 · [все уроки](courses/harness/lessons/index.md) | Пройти урок, прислать карту Orchestrator (`lab/0001-karta-orchestrator.md`) |
+| [harness](courses/harness/MISSION.md) — выбрать харнес для себя, построить для аналитиков | research → practice | Модель слоёв харнеса → выбор своего → харнес аналитиков кластера | 0001 · Слои харнеса — 2026-10-07 · [сайт курса](https://claude.ai/artifact/XBevmPKCoLG9648WhZ2RBb) | Пройти урок, прислать карту Orchestrator (`lab/0001-karta-orchestrator.md`) |
 
 ## Очередь
 

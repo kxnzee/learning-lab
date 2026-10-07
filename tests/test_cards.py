@@ -127,3 +127,27 @@ def test_roundtrip_keeps_header_multiline_and_hand_edits(lab):
 
 def test_empty_answer_rejected(lab):
     assert run(lab, "add", "--topic", "sql", "--q", "q", "--a", "  ") == 2
+
+
+# --- course_site.py ---------------------------------------------------------
+SITE = Path(__file__).resolve().parents[1] / "plugin" / "skills" / "teach" / "scripts" / "course_site.py"
+_s = importlib.util.spec_from_file_location("course_site", SITE)
+course_site = importlib.util.module_from_spec(_s)
+_s.loader.exec_module(course_site)
+
+
+def test_course_site_builds_hub_and_mirrors_paths(lab, tmp_path):
+    (lab / "assets").mkdir()
+    (lab / "assets" / "lab.css").write_text(":root{--ink:#000}", encoding="utf-8")
+    c = lab / "courses" / "demo"
+    (c / "lessons").mkdir(parents=True)
+    (c / "MISSION.md").write_text("# Миссия: демо-тема\n\n## Зачем\nЧтобы проверить.\n\n## Успех — это\n- [x] Первое\n- [ ] Второе\n", encoding="utf-8")
+    (c / "lessons" / "0001-a.html").write_text('<title>Первый урок</title><p class="win">Победа <b>одна</b></p>', encoding="utf-8")
+    out = tmp_path / "site"
+    files = course_site.build(lab, "demo", out)
+    assert set(files) == {"assets/lab.css", "courses/demo/lessons/0001-a.html"}
+    page = (out / "index.html").read_text(encoding="utf-8")
+    assert "<title>Курс demo</title>" in page
+    assert "<h1>Демо-тема</h1>" in page
+    assert "Достигнуто 1 из 2" in page
+    assert 'href="courses/demo/lessons/0001-a.html"' in page and "Победа одна" in page

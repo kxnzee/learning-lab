@@ -1,11 +1,12 @@
 # Уроки и справочники: harness
 
-Ссылки на артефакты — для прохождения в приложении Claude. Исходники лежат рядом; артефакт пересобирается из исходника.
+**Сайт курса (артефакт):** https://claude.ai/artifact/XBevmPKCoLG9648WhZ2RBb
+Один артефакт на курс: уроки и справочники — его внутренние страницы. Пересобирается скриптом `course_site.py` из файлов этой папки.
 
-| № | Урок | Исходник | Артефакт |
-|---|---|---|---|
-| 0001 | Слои харнеса | [0001-sloi-harnesa.html](0001-sloi-harnesa.html) | https://claude.ai/artifact/XFJohnNxpVsaSL2ejVj3WY |
-
-| Справочник | Исходник | Артефакт |
+| № | Урок | Исходник |
 |---|---|---|
-| Шпаргалка слоёв харнеса | [../reference/sloi-harnesa.html](../reference/sloi-harnesa.html) | https://claude.ai/artifact/JSfZeWroszs6BfN3kRrfTX |
+| 0001 | Слои харнеса | [0001-sloi-harnesa.html](0001-sloi-harnesa.html) |
+
+| Справочник | Исходник |
+|---|---|
+| Шпаргалка слоёв харнеса | [../reference/sloi-harnesa.html](../reference/sloi-harnesa.html) |
